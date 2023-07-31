@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.burgerMenu {
+	height: 100%;
+	width: 3em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.burgerMenuButton {
+	width: auto;
+	height: auto;
+	display:flex;
+	flex-direction: column;
+	opacity: 1;
+}
+
+.hidden{
+	display: none;
+}
+
+.visible {
+	display: inherit;
+}
+
+.clicked:nth-child(1){
+	width: 50px;
+	height: 8px;
+	background-color: #FCA616;
+	border-radius: 0.5em;
+	transform: rotate(46deg) translate(10px, 14px);
+	transition: ease-out 0.5s;
+}
+.clicked:nth-child(2){
+	width: 50px;
+	height: 8px;
+	background-color: #FCA616;
+	border-radius: 0.5em;
+	transform: scale(0);
+	transition: ease-out 0.5s;
+}
+.clicked:nth-child(3){
+	width: 50px;
+	height: 8px;
+	background-color: #FCA616;
+	border-radius: 0.5em;
+	transform: rotate(132deg) translate(4px, 2.5px);
+	transition: ease-out 0.5s;
+}
+
+.unclicked {
+	width: 50px;
+	height: 8px;
+	background-color: #FCA616;
+	border-radius: 0.5em;
+	transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+	transform: rotate(0) translate(0);
+	margin: 3px;
+}
+.menu a{
+	margin-top: 3em;
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: black;
+	display: block;
+	transition: 0.3s;
+}
+
+.menu a:hover {
+	color: red;
+}
+
+.menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.topBar {
+	width: 100%;
+	height: 4.5em;
+	background-color: #14203E;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+
+}
+
+.searchBar{
+	align-self: center;
+}
+
+.connexionButton {
+	align-self: center;
+	margin-right: 3%;
+}
+
+.connexionButton a{
+	font-size:20px;
+	color: #FCA616;
+	text-decoration:none;
+}
+
+/*search icone*/
+
+.searchIcon {
+	width: 20px;
+	height: 20px;
+  	color: #FFF;
+	margin-left: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 100px;
+  	border-color: #FFFFFF;
+	display: inline-block;
+	background-color: transparent;
+}
+
+.searchIcon::before {
+	width: 0px;
+	height: 0px;
+	content: "";
+	display: block;
+	margin-top: 17px;
+	margin-left: -9px;
+    transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	border-bottom: 10px solid currentColor;
+    -webkit-transform: rotate(45deg);
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+.searchIcon::after {
+	content: "";
+	height: 15px;
+	width: 11.5px;
+	display: block;
+	margin-top: -4px;
+	margin-left: -18px;
+	background-color: currentColor;
+    transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	border-bottom-left-radius: 50px;
+    -webkit-transform: rotate(45deg);
+	border-bottom-right-radius: 50px;
+}

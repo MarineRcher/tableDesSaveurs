@@ -1,41 +1,48 @@
 import { useState } from 'react'
-import './NavBar.css'
+import styles from '../styles/NavBar.module.css'
+import Search from './Search'
+import SideBar from './SideBar';
+import ButtonSearch from './ButtonSearch';
+import {Data_recipe} from './Search'
+import Data from '../data.json'
 
-const	NavBar = () => {
-	const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
-	const [menu_class, setMenuClass] = useState("menu hidden")
-	const [isMenuClicked, setIsMenuClicked] = useState(false)
-
-	const updateMenu = () => {
-		if(!isMenuClicked){
-			setBurgerClass("burger-bar clicked")
-			setMenuClass("menu visible")
+function NavBar() {
+	const [burgerClass, setBurgerClass] = useState('unclicked');
+	const [menuClass, setMenuClass] = useState("menu hidden");
+	const [isMenuClicked, setIsMenuClicked] = useState(false);
+	const [searchInput, setSearchInput] = useState('');
+	
+	function handleClickBurgerMenu () {
+		if (burgerClass === 'unclicked') {
+			setBurgerClass('clicked');
 		}
-		else{
-			setBurgerClass("burger-bar unclicked")
-			setMenuClass("menu hidden")
+		else {
+			setBurgerClass('unclicked');
 		}
-		setIsMenuClicked(!isMenuClicked)
 	}
-	return (
-		<div className="topbar">
-			<nav>
-				 <div className="burger-menu" onClick={updateMenu}>
-					<div className={burger_class}></div>
-					<div className={burger_class}></div>
-					<div className={burger_class}></div>
-				 </div>
-			</nav>
 
-			<div className={menu_class}>
-				<ul>
-					<li><a href='#'>SISI</a></li>
-					<li><a href='#' >CC</a></li>
-				</ul>
+	function handleSearchInput(value) {
+		setSearchInput(value);
+	}
+
+	return (
+		<div id="topBar" className={styles.topBar}>
+			<div id="burgerMenu" className={styles.burgerMenu}>
+				<div className={styles.burgerMenuButton} onClick={handleClickBurgerMenu}>
+					<div className={styles[burgerClass]}></div>
+					<div className={styles[burgerClass]}></div>
+					<div className={styles[burgerClass]}></div>
+				</div>
 			</div>
-			<searchBar />
-		</div>
-	)
+			<SideBar state={burgerClass}/>
+			<div className={styles.searchBar}>
+				<Search input={handleSearchInput}/>
+			</div>
+			<div className={styles.connexionButton}>
+				<a href="#" id="connexion">Connexion</a>
+			</div>
+		</div>	
+	);
 }
 
 export default NavBar

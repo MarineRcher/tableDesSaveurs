@@ -1,0 +1,26 @@
+[
+	{
+		"recipe": "Pates carbo",
+		"country": "Italia"
+	},
+	{
+		"recipe": "Nouilles soja",
+		"country": "China"
+	},
+	{
+		"recipe": "Pates truffes",
+		"country": "France"
+	},
+	{
+		"recipe": "Tarte citron",
+		"country": "France"
+	},
+	{
+		"recipe": "Pates Bolognaise",
+		"country": "Italia"
+	},
+	{
+		"recipe": "Ratatouille",
+		"country": "France"
+	}
+]
